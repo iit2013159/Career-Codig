@@ -1,0 +1,7 @@
+1.  Jump search - In this search what happens is that you jump from intervals to intervals and look whether A[interval -1 ] < element < A[interval]
+if that is true than we search linearly in that interval. For optimal interval value is we look at that worst case of the algorithm .
+The Worst case happens when that element lies in the end of the array. So if the size of array is N and interval size is M. the worst case
+iteration possible will be (N/M +M -1). so F(y) = N/M +M -1 . Now it is pure mathematical problem to find the minima of the function. 
+By finding the double derrivative and check if its positve and then derrivative of function equating to zero will be global minima of the function.
+in this case that is dy/dm = ((-N + M.dN/dM)/M^2) + 1 -0  ==> since N is const. dN/dM = 0 . ==> N/M^2 = 1  ==> M = sqrt(N)
+therefore m optimal will be sqrt(N).
