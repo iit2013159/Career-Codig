@@ -5,3 +5,7 @@ iteration possible will be (N/M +M -1). so F(y) = N/M +M -1 . Now it is pure mat
 By finding the double derrivative and check if its positve and then derrivative of function equating to zero will be global minima of the function.
 in this case that is dy/dm = ((-N + M.dN/dM)/M^2) + 1 -0  ==> since N is const. dN/dM = 0 . ==> N/M^2 = 1  ==> M = sqrt(N)
 therefore m optimal will be sqrt(N).
+
+Binary Search is better than Jump Search, but Jump search has an advantage that we traverse back only once 
+(Binary Search may require up to O(Log n) jumps, consider a situation where the element to be search is the smallest element or smaller 
+than the smallest). So in a systems where jumping back is costly, we use Jump Search.
