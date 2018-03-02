@@ -1,0 +1,23 @@
+1. Union Find algorithm
+  To understand this algorithm we first have to understand the dynamic connectivity. The dynamic connectivity problem asks there are
+  given points may be graph points or vertices and whether these points are connected or not in the given graph. Now the union find
+  algorithm has 2 components 1)Find whether they are connected or not 2)If they are not connected connect them in efficient way as per 
+  the situation.
+        There are multiple approach in it
+        1)Brute Force method.or Quick Find ==> Initiate all vertex with their vertex id. Now if two vertex has same id then they are               connected. To make union of p and q we make all the connected component'id of p and q's same as p or q. 
+        this method find the connectivity in constant time . But Union takes O(N^2).
+        
+        2)Quick Union or tree approach ==> Initiate all vertex with their vertex id.Now if two vertex has same root then they are                  connected.To make union of p and q we make p the child of p and set the id of q of p's id. To find the root we iterate over
+        the tree and check whether the id is same as its vertex or not.     
+                      The Union operation and operation are O(N). The problem with this approach is that the depth of tree may be very 
+                      large. so in worst case we have to lookout every node.
+                      
+        3)Weighted quick Union approach ==> We do same as Quick union but when we are making union of p and q. then we first get the
+        size of tree i.e. the number of node in the tree and then we always join smaller tree to larger tree regardless of order.
+        To get the size of the tree we always update an extra size array which will update the size of root every time a child is added.
+        This way we gurantee that the find and Union can be always in O(log(N)).
+        
+        4)Quick Union with Path compression ==> Now in addition to the weighted quick union. We make it more efficient by every time
+        we do find operation on any two vertex we make them the child of their root. This way we achieve near linear time in find
+        operation i.e. O(log*N).
+        Note - O(log*N) means that number of log operation needed to make the N equal to 1.
