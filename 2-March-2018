@@ -21,3 +21,8 @@
         we do find operation on any two vertex we make them the child of their root. This way we achieve near linear time in find
         operation i.e. O(log*N).
         Note - O(log*N) means that number of log operation needed to make the N equal to 1.
+        
+        The application of Union find algorithm are in PERCOLATION, LCA(Least common ancestor),Kruskal MST,Matlab's bwlabel function
+        in Image processing.
+        
+ 2.
