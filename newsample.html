@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new Sample</title>
+    <script>
+
+        var commName = ["Khujema_Katler", "Parul_Gangwal", "Paul_Koffi", "Rohini_Nandanwar", "Sachin_Darshale"];
+        var Khujema_Katler =['20180612','20180613'];
+        var Parul_Gangwal = ['20180619'];
+        var Paul_Koffi = ['20180620'];
+        var Rohini_Nandanwar= ['20180613','20180615'];
+        var Sachin_Darshale =['20180619'];
+		var Khujema_Katler_20180612='<object type="text/html" data="./SametimeTranscripts/CN=Khujema Katleri,OU=Service/20180612/CN=Khujema Katleri,Olog.html" ></object>';
+
+        function myFunction(idname) {
+            var div = document.getElementById(idname.concat("_dates"));
+            div.style.visibility= 'visible';
+        }
+        function abc(idname) {
+			alert(idname);
+            var div = document.getElementById(idname);
+            div.style.display='block';
+            div.style.visibility= 'visible';
+        }
+		function showHtml(idname) {
+			alert(idname);
+            var div = document.getElementById(idname.concat("_html"));			
+            div.style.display='block';
+            div.style.visibility= 'visible';
+        }
+		
+
+        function setdiv() {
+            for(var i = 0; i < commName.length;i++){
+                var div = document.getElementById("names");
+                div.innerHTML +="<button id='"+commName[i]+"' value='"+commName[i]+"' onclick='myFunction(this.id)'>"+commName[i]+"</button><br />";
+                var anotherdiv = document.getElementById("left");
+                var nameArray =this[commName[i]];
+                var content ="<div id='"+commName[i].concat('_dates')+"' style='visibility: hidden'>";
+                for (var ab = 0; ab < nameArray.length ; ab++){
+                    var datename = commName[i].concat("_").concat(nameArray[ab]);
+                    content +="<button id='"+datename+"' value='"+datename+"' onclick='showHtml(this.id)'>"+nameArray[ab]+"</button><br />\n" ;
+					content +="<div id='"+datename.concat("_html") + "' style='visibility: hidden'>";
+					content += this[datename];
+					content +="</div>";
+                }                
+                content +="</div>";
+                anotherdiv.innerHTML += content;
+            }
+        }
+    </script>
+</head>
+<body style="overflow: auto" onload="setdiv() ">
+    <div id ="top">
+        <div id="names">
+
+        </div>
+    </div>
+    <div id ="left">
+        <!--<div id="Khujema Katler_dates" style="visibility: hidden">
+            <button id="Khujema Katler_20180612" value="Khujema Katler_20180612" onclick="abc(this.id)">12th June 2018</button><br />
+            <button id="Khujema Katler_20180613" value="Khujema Katler_20180613" onclick="abc(this.id)">13th June 2018</button><br />
+        </div>-->
+
+    </div>
+
+    <div id ="bottom">
+        <div id="Khujema Katler_20180612_html" style="clear: both;display: none; visibility: hidden">
+
+        </div>
+        </div>
+
+</body>
+</html>
