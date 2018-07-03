@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new Sample</title>
+    <script>
+        var commName=[ 'Khujema_Katleri','Khujema_Katleri','Parul_Gangwal','Paul_Koffi','Rohini_Nandanwar',"Sachin_Darshale" ];
+        var Khujema_Katleri=[20180612,20180613,];
+        var Khujema_Katleri=[20180612,20180613,];
+        var Parul_Gangwal=[20180619,];
+        var Paul_Koffi=[20180620,];
+        var Rohini_Nandanwar=[20180613,20180615,];
+        var Sachin_Darshale=[20180619,];
+        var Khujema_Katleri_20180612='<object width="800" height="800" type="text/html" data="./SametimeTranscripts/CN=Khujema Katleri,OU=Service/20180612/CN=Khujema Katleri,Olog.html" ></object>';
+        var Khujema_Katleri_20180613='<object width="800" height="800" type="text/html" data="./SametimeTranscripts/CN=Khujema Katleri,OU=Service/20180613/CN=Khujema Katleri,Olog.html" ></object>';
+        var Khujema_Katleri_20180612='<object width="800" height="800" type="text/html" data="./SametimeTranscripts/CN=Khujema Katleri,OU=ServiceC/20180612/CN=Khujema Katleri,Olog.html" ></object>';
+        var Khujema_Katleri_20180613='<object width="800" height="800" type="text/html" data="./SametimeTranscripts/CN=Khujema Katleri,OU=ServiceC/20180613/CN=Khujema Katleri,Olog.html" ></object>';
+        var Parul_Gangwal_20180619='<object width="800" height="800" type="text/html" data="./SametimeTranscripts/CN=Parul Gangwal,OU=ServiceCen/20180619/CN=Parul Gangwal,OU=log.html" ></object>';
+        var Paul_Koffi_20180620='<object width="800" height="800" type="text/html" data="./SametimeTranscripts/CN=Paul Koffi,OU=ServiceCentre/20180620/CN=Paul Koffi,OU=Serlog.html" ></object>';
+        var Rohini_Nandanwar_20180613='<object width="800" height="800" type="text/html" data="./SametimeTranscripts/CN=Rohini Nandanwar,OU=Service/20180613/CN=Rohini Nandanwar,log.html" ></object>';
+        var Rohini_Nandanwar_20180615='<object width="800" height="800" type="text/html" data="./SametimeTranscripts/CN=Rohini Nandanwar,OU=Service/20180615/CN=Rohini Nandanwar,log.html" ></object>';
+        var Sachin_Darshale_20180619='<object width="800" height="800" type="text/html" data="./SametimeTranscripts/CN=Sachin Darshale,OU=ServiceC/20180619/CN=Sachin Darshale,Olog.html" ></object>';
+
+        function myFunction(idname) {
+            var nameArray =this[idname];
+    
+            //alert(nameArray.length);
+			
+			var finalcontent='';
+            for (var ab = 0; ab < nameArray.length ; ab++){
+			var date1=nameArray[ab];
+				var content ="<div id='"+date1+"_dates"+"' style=''>";
+                var datename = idname.concat("_").concat(date1);
+                content +="<button id='"+datename+"' value='"+datename+"' onclick='showHtml(this.id)'>"+date1+"</button><br />\n" ;
+                content +="<div id='"+datename.concat("_html") + "' style='visibility: hidden'>";
+                content += this[datename];
+                content +="</div>";
+				finalcontent+=content;
+				
+            }
+
+document.getElementById("left").innerHTML=finalcontent;
+           // var div = document.getElementById(idname.concat("_dates"));
+           // div.style.visibility= 'visible';
+        }
+        function abc(idname) {
+            alert(idname);
+            var div = document.getElementById(idname);
+            div.style.display='block';
+            div.style.visibility= 'visible';
+        }
+        function showHtml(idname) {
+            alert(idname);
+            var div = document.getElementById(idname.concat("_html"));
+            div.style.display='block';
+            div.style.visibility= 'visible';
+            div.style.resize ='both';
+            div.style.overflow ='auto';
+        }
+
+
+        function setdiv() {
+            var div = document.getElementById("names");
+            for(var i = 0; i < commName.length;i++){
+                div.innerHTML +="<button id='"+commName[i]+"' value='"+commName[i]+"' onclick='myFunction(this.id)'>"+commName[i]+"</button><br />";
+
+            }
+        }
+
+
+    </script>
+</head>
+<body style="overflow: auto" onload="setdiv() ">
+<div id ="top">
+    <div id="names" >
+
+    </div>
+</div>
+<div id ="left">
+
+</div>
+
+<div id ="bottom">
+
+</div>
+
+</body>
+</html>
